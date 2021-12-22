@@ -28,6 +28,7 @@ function Drop() {
       this.y = random(-200, -50);
       this.yspeed = this.reYSpeed();
       this.xspeed = this.reXSpeed();
+      this.x = random(width);
     }
 
     if (this.x > width+10) this.x = random(-5, 0);
