@@ -24,7 +24,7 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  len = Math.floor(windowWidth*windowHeight/10000);
+  len = Math.floor(windowWidth*windowHeight/10000*2);
   while (drops.length != len){
     if (drops.length < len) drops.push(new Drop());
     else drops.pop();
