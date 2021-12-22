@@ -1,9 +1,11 @@
 var drops = [];
 var windspeed = 0;
 var grav = 0.02;
+var len;
 function setup() {  
   createCanvas(windowWidth, windowHeight);
-  for (var i = 0; i < width*height/10000; i++) {
+  len = Math.floor(windowWidth*windowHeight/10000*2);
+  for (var i = 0; i < len; i++) {
     drops[i] = new Drop();
   }
 }
@@ -22,7 +24,7 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  var len = Math.floor(windowWidth*windowHeight/10000);
+  len = Math.floor(windowWidth*windowHeight/10000);
   while (drops.length != len){
     if (drops.length < len) drops.push(new Drop());
     else drops.pop();
