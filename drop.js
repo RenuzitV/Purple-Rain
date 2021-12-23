@@ -1,6 +1,6 @@
 function Drop() {
   this.reYSpeed = function(){
-    return map(this.z, 0, 20, 10, 15);
+    return map(this.z, 0, 20, 4, 20);
   }
   this.reXSpeed = function(){
     return random(-0.03, 0.03);
@@ -9,7 +9,7 @@ function Drop() {
   this.x = random(width);
   this.y = random(-width, 0);
   this.z = random(0, 20);
-  this.len = map(this.z, 0, 20, 8, 20);
+  this.len = map(this.z, 0, 20, 10, 25);
   this.yspeed = this.reYSpeed();
   this.xspeed = this.reXSpeed();
   this.maxX = 3;
@@ -20,7 +20,7 @@ function Drop() {
     this.y = this.y + this.yspeed;
     this.x = this.x + this.xspeed;
 //     var grav = map(this.z, 0, 20, 0, 0.01);
-    this.yspeed = max(min(this.yspeed + grav, 10), -10);
+    // this.yspeed = max(min(this.yspeed + grav*this.z/5, 10), -10);
     // this.xspeed = max(min(this.xspeed + windspeed, this.maxX), -this.maxX);
     this.xspeed = map(mouseX, 0, width, -1, 1);
 
